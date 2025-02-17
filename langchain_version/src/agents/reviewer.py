@@ -4,6 +4,7 @@ from langchain_core.messages import HumanMessage
 
 from .state import State
 from .default import DefaultAgent
+from .utils import extract_and_write_code
 
 logger = logging.getLogger(__name__)
 
@@ -19,6 +20,7 @@ class Reviewer(DefaultAgent):
         super().__init__(
             model=model, temperature=temperature, num_ctx=num_ctx, prompt=prompt
         )
+        self.ite = 0
 
     def invoke(self, state: State):
         logger.info("start reviewer")
@@ -44,4 +46,8 @@ The current code is:
         logger.debug(response.pretty_print())
         logger.info("end reviewer")
 
-        return {"messages": response, "current_code": response.content}
+        current_code = extract_and_write_code(
+            response.content, f"current_code_{self.ite}"
+        )
+        self.ite += 1
+        return {"messages": response, "current_code": current_code}
