@@ -20,7 +20,7 @@ class FeatureGraph:
         self.graph.add_edge(START, "analyse")
         self.graph.add_edge("analyse", "junior")
         self.graph.add_conditional_edges("analyse", self.send_to_junior, ["junior"])
-        # self.graph.add_edge("junior", "reviewing")
+        self.graph.add_edge("junior", "reviewing")
 
         self.graph.add_node("analyse", self.supervisor.invoke)
         self.graph.add_node("junior", self.junior.invoke)

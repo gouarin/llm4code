@@ -32,6 +32,6 @@ Simplify the graph using these 4 criteria:
 
 graph = src.FeatureGraph(nb_juniors=1)
 
-for query in queries:
+for query in queries[:2]:
     print("query: ", query)
     result = graph.invoke(query)

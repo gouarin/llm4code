@@ -43,11 +43,12 @@ The current code is:
         )
         response = self.agent.invoke(prompt)
 
-        logger.debug(response.pretty_print())
-        logger.info("end reviewer")
-
         current_code = extract_and_write_code(
             response.content, f"current_code_{self.ite}"
         )
         self.ite += 1
+
+        logger.debug(current_code)
+        logger.info("end reviewer")
+
         return {"messages": response, "current_code": current_code}
