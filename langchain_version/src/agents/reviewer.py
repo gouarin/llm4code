@@ -44,7 +44,7 @@ The current code is:
         response = self.agent.invoke(prompt)
 
         current_code = extract_and_write_code(
-            response.content, f"current_code_{self.ite}"
+            response.content, f"current_code_{self.ite}.py"
         )
         self.ite += 1
 
