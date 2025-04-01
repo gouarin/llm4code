@@ -23,6 +23,7 @@ dependencies = [
     "pydantic-ai-slim[duckduckgo]>=0.0.41",
     "pydantic-ai[logfire]>=0.0.41",
     "pytest>=8.3.5",
+    "scipy>=1.15.2",
 ]
 
 [build-system]

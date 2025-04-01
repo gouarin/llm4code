@@ -3,16 +3,40 @@ name = "code-agent"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = "==3.12.*"
 dependencies = [
     "black>=25.1.0",
+    "chromadb>=0.6.3",
+    "ipykernel>=6.29.5",
+    "ipython>=9.0.2",
+    "langchain>=0.3.20",
+    "langchain-chroma>=0.2.2",
+    "langchain-community>=0.3.19",
     "langchain-ollama>=0.2.3",
-    "langgraph>=0.2.72",
-    "pydantic-ai[logfire]>=0.0.24",
+    "langgraph>=0.3.11",
+    "llama-index>=0.11.22",
+    "llama-index-embeddings-ollama>=0.6.0",
+    "llama-index-llms-ollama>=0.3.6",
+    "llama-index-multi-modal-llms-ollama>=0.4.0",
+    "llama-index-readers-web>=0.2.4",
+    "markdownify>=1.1.0",
+    "mem0ai[graph]>=0.1.73",
+    "pandas>=2.2.3",
+    "pdf2image>=1.17.0",
+    "pillow>=11.1.0",
+    "pydantic-ai[logfire]>=0.0.41",
+    "pymupdf>=1.25.4",
+    "pypdf>=5.3.1",
+    "pytesseract>=0.3.13",
+    "rapidocr-onnxruntime>=1.4.4",
+    "streamlit>=1.43.2",
+    "tabula-py>=2.10.0",
+    "unstructured[all-docs]>=0.17.0",
+    "watchdog>=6.0.0",
 ]
 
 
 ignore_no_config = true
 
 [tool.uv.workspace]
-members = ["output"]
+members = ["output", "agents/my_package/mypackage", "agents/my_package", "agents/my_project", "software_team"]
